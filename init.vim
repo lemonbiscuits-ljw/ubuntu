@@ -8,6 +8,7 @@ Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'majutsushi/tagbar'
 Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 colorscheme gruvbox
@@ -17,24 +18,26 @@ let g:indent_guides_start_level           = 2  " 从第二层开始可视化显�
 
 " 设置状态栏
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#right_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:airline#extensions#tabline#buffer_nr_show = 0
 let g:airline#extensions#tabline#formatter = 'default'
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1   " 是否打开tabline
 " let g:airline_theme = 'desertink'  " 主题
 " let g:airline#extensions#keymap#enabled = 1
 " let g:airline#extensions#tabline#buffer_idx_mode = 1
 " let g:airline#extensions#tabline#buffer_idx_format = {
-"        \ '0': '0 ',
-"        \ '1': '1 ',
-"        \ '2': '2 ',
-"        \ '3': '3 ',
-"        \ '4': '4 ',
-"        \ '5': '5 ',
-"        \ '6': '6 ',
-"        \ '7': '7 ',
-"        \ '8': '8 ',
-"        \ '9': '9 '
-"        \}
+"         \ '0': '0 ',
+"         \ '1': '1 ',
+"         \ '2': '2 ',
+"         \ '3': '3 ',
+"         \ '4': '4 ',
+"         \ '5': '5 ',
+"         \ '6': '6 ',
+"         \ '7': '7 ',
+"         \ '8': '8 ',
+"         \ '9': '9 '
+"         \}
 " " 设置切换tab的快捷键 <\> + <i> 切换到第i个 tab
 " nmap <leader>1 <Plug>AirlineSelectTab1
 " nmap <leader>2 <Plug>AirlineSelectTab2
@@ -62,6 +65,7 @@ let g:airline#extensions#tabline#formatter = 'default'
 " let g:airline_symbols.readonly = "RO"
 " let g:airline_symbols.dirty = "DT"
 " let g:airline_symbols.crypt = "CR" 
+" let g:Powerlin_symbols = 'unicode'
 
 
 " autocmd vimenter * NERDTree  "自动开启Nerdtree
@@ -88,7 +92,6 @@ nnoremap <silent> <F4> :TagbarToggle<CR> " 将tagbar的开关按键设置为 F4
 
 
 filetype plugin on
-set ambiwidth=double
 set t_ut=
 set showmatch
 set matchtime=1
@@ -96,7 +99,7 @@ set report=0
 set ignorecase
 set bg=dark
 set number
-set guifont=FiraCode
+" set guifont=FiraCode
 set nobackup
 set nowritebackup
 set noeb
@@ -129,3 +132,8 @@ set shortmess+=c
 set signcolumn=yes
 set foldmethod=indent
 set foldlevelstart=99
+set nocompatible
+set hidden
+set termguicolors
+set background=dark
+highlight Normal guibg=NONE ctermbg=None        " 设置终端透明
